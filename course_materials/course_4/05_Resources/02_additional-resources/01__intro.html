@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MP366CC');</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="description" content="Efficient topic modelling of text semantics in Python." />
+<meta property="og:title" content="gensim: topic modelling for humans" />
+<meta property="og:description" content="Efficient topic modelling in Python" />
+<title>gensim: Introduction</title>
+<link rel="stylesheet" href="_static/css/style.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/jquery.qtip.min.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/anythingslider.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="_static/favicon.ico" />
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MP366CC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div id="topwrap">
+<div id="top1">
+<div id="left1">
+<h1 class="h1gensim">
+<img src="_static/images/logo-gensim_compact.png" alt="gensim logo" title="Gensim - topic modelling for humans" />
+</h1>
+</div>
+<div id="middleright">
+<div id="middle1">
+<div id="gensim"><a href="index.html"><img src="_static/images/gensim_compact.png" alt="gensim" title="Gensim home" /></a></div>
+<div id="tagline"><img src="_static/images/tagline_compact.png" alt="gensim tagline" /></div>
+</div>
+<div id="right1">
+<div class="consulting-banner">
+<h3>Get Expert Help From The Gensim Authors</h3>
+<p>• <a href="https://rare-technologies.com/">Consulting</a> in Machine Learning &amp; NLP</p>
+<p>• Commercial document similarity engine: <a href="https://scaletext.com/">ScaleText.ai</a></p>
+<p>• <a href="https://rare-technologies.com/corporate-training/">Corporate trainings</a> in Python Data Science and Deep Learning</p>
+</div>
+</div>
+</div>
+</div>
+<div id="menu">
+<div id="indentation1">
+<ul class="menubuttons">
+<li class="menubutton"><a href="index.html">Home</a></li>
+<li class="menubutton"><a href="tutorial.html">Tutorials</a></li>
+<li class="menubutton"><a href="install.html">Install</a></li>
+<li class="menubutton"><a href="support.html">Support</a></li>
+<li class="menubutton"><a href="apiref.html">API</a></li>
+<li class="menubutton"><a href="about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT: './',
+    VERSION: '3.6.0',
+    COLLAPSE_INDEX: false,
+    FILE_SUFFIX: '.html',
+    HAS_SOURCE: true
+  };
+  </script>
+<script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.anythingslider.min.js"></script>
+<div class="document">
+<div id="thinbanner">
+<div id="bodythinbanner">
+<span class="h2gensim">Introduction</span>
+</div>
+</div>
+<div class="obsah">
+<div class="obsahwrapper">
+<div class="section" id="introduction">
+<span id="intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Gensim is a <a class="reference internal" href="#availability"><span class="std std-ref">free</span></a> Python library designed to automatically extract semantic
+topics from documents, as efficiently (computer-wise) and painlessly (human-wise) as possible.</p>
+<p>Gensim is designed to process raw, unstructured digital texts (“<em>plain text</em>”).</p>
+<p>The algorithms in Gensim, such as <a class="reference internal" href="models/word2vec.html#gensim.models.word2vec.Word2Vec" title="gensim.models.word2vec.Word2Vec"><code class="xref py py-class docutils literal notranslate"><span class="pre">Word2Vec</span></code></a>, <a class="reference internal" href="models/fasttext.html#gensim.models.fasttext.FastText" title="gensim.models.fasttext.FastText"><code class="xref py py-class docutils literal notranslate"><span class="pre">FastText</span></code></a>,
+Latent Semantic Analysis (LSI, LSA, see <a class="reference internal" href="models/lsimodel.html#gensim.models.lsimodel.LsiModel" title="gensim.models.lsimodel.LsiModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LsiModel</span></code></a>), Latent Dirichlet
+Allocation (LDA, see <a class="reference internal" href="models/ldamodel.html#gensim.models.ldamodel.LdaModel" title="gensim.models.ldamodel.LdaModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LdaModel</span></code></a>) etc, automatically discover the semantic structure of documents by examining statistical
+co-occurrence patterns within a corpus of training documents. These algorithms are <strong>unsupervised</strong>,
+which means no human input is necessary – you only need a corpus of plain text documents.</p>
+<p>Once these statistical patterns are found, any plain text documents (sentence, phrase, word…) can be succinctly expressed in the new, semantic representation and queried for topical similarity against other documents (words, phrases…).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the previous paragraphs left you confused, you can read more about the <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_space_model">Vector
+Space Model</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Latent_semantic_indexing">unsupervised
+document analysis</a> on Wikipedia.</p>
+</div>
+<div class="section" id="features">
+<span id="design"></span><h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Memory independence</strong> – there is no need for the whole training corpus to
+reside fully in RAM at any one time (can process large, web-scale corpora).</li>
+<li><strong>Memory sharing</strong> – trained models can be persisted to disk and loaded back via <a class="reference external" href="https://en.wikipedia.org/wiki/Mmap">mmap</a>. Multiple processes can share the same data, cutting down RAM footprint.</li>
+<li>Efficient implementations for several popular vector space algorithms,
+including <a class="reference internal" href="models/word2vec.html#gensim.models.word2vec.Word2Vec" title="gensim.models.word2vec.Word2Vec"><code class="xref py py-class docutils literal notranslate"><span class="pre">Word2Vec</span></code></a>, <a class="reference internal" href="models/doc2vec.html#gensim.models.doc2vec.Doc2Vec" title="gensim.models.doc2vec.Doc2Vec"><code class="xref py py-class docutils literal notranslate"><span class="pre">Doc2Vec</span></code></a>, <a class="reference internal" href="models/fasttext.html#gensim.models.fasttext.FastText" title="gensim.models.fasttext.FastText"><code class="xref py py-class docutils literal notranslate"><span class="pre">FastText</span></code></a>,
+TF-IDF, Latent Semantic Analysis (LSI, LSA, see <a class="reference internal" href="models/lsimodel.html#gensim.models.lsimodel.LsiModel" title="gensim.models.lsimodel.LsiModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LsiModel</span></code></a>),
+Latent Dirichlet Allocation (LDA, see <a class="reference internal" href="models/ldamodel.html#gensim.models.ldamodel.LdaModel" title="gensim.models.ldamodel.LdaModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LdaModel</span></code></a>) or Random Projection (see <a class="reference internal" href="models/rpmodel.html#gensim.models.rpmodel.RpModel" title="gensim.models.rpmodel.RpModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RpModel</span></code></a>).</li>
+<li>I/O wrappers and readers from several popular data formats.</li>
+<li>Fast similarity queries for documents in their semantic representation.</li>
+</ul>
+<p>The <strong>principal design objectives</strong> behind Gensim are:</p>
+<ol class="arabic simple">
+<li>Straightforward interfaces and low API learning curve for developers. Good for prototyping.</li>
+<li>Memory independence with respect to the size of the input corpus; all intermediate
+steps and algorithms operate in a streaming fashion, accessing one document
+at a time.</li>
+</ol>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p>We also built a high performance commercial server for NLP, document analysis, indexing, search and clustering: <a class="reference external" href="https://scaletext.ai">https://scaletext.ai</a>. ScaleText is available both on-prem and as SaaS.</p>
+<p class="last">Reach out at <a class="reference external" href="/cdn-cgi/l/email-protection#731a1d151c555040444855504641485550474b480010121f1607160b075550474548101c1e">info<span>&#64;</span>scaletext<span>&#46;</span>com</a> if you need an industry-grade NLP tool with professional support.</p>
+</div>
+</div>
+<div class="section" id="availability">
+<span id="id1"></span><h2>Availability<a class="headerlink" href="#availability" title="Permalink to this headline">¶</a></h2>
+<p>Gensim is licensed under the OSI-approved <a class="reference external" href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html">GNU LGPLv2.1 license</a> and can be downloaded either from its <a class="reference external" href="https://github.com/piskvorky/gensim/">Github repository</a>
+or from the <a class="reference external" href="https://pypi.python.org/pypi/gensim">Python Package Index</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See the <a class="reference internal" href="install.html"><span class="doc">install</span></a> page for more info on Gensim deployment.</p>
+</div>
+</div>
+<div class="section" id="core-concepts">
+<h2>Core concepts<a class="headerlink" href="#core-concepts" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-corpus">Corpus</dt>
+<dd><p class="first">A collection of digital documents. Corpora serve two roles in Gensim:</p>
+<ol class="last arabic">
+<li><p class="first">Input for model training
+The corpus is used to automatically train a machine learning model, such as
+<a class="reference internal" href="models/lsimodel.html#gensim.models.lsimodel.LsiModel" title="gensim.models.lsimodel.LsiModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LsiModel</span></code></a> or <a class="reference internal" href="models/ldamodel.html#gensim.models.ldamodel.LdaModel" title="gensim.models.ldamodel.LdaModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LdaModel</span></code></a>.</p>
+<p>The models use this <em>training corpus</em> to look for common themes and topics, initializing
+their internal model parameters.</p>
+<p>Gensim in unique in its focus on <em>unsupervised</em> models so that no human intervention,
+such as costly annotations or tagging documents by hand, is required.</p>
+</li>
+<li><p class="first">Documents to organize.
+After training, a topic model can be used to extract topics from new documents (documents
+not seen in the training corpus).</p>
+<p>Such corpora can be <a class="reference internal" href="tut3.html"><span class="doc">indexed</span></a>, queried by semantic similarity, clustered etc.</p>
+</li>
+</ol>
+</dd>
+<dt id="term-vector-space-model">Vector space model</dt>
+<dd><p class="first">In a Vector Space Model (VSM), each document is represented by an
+array of features. For example, a single feature may be thought of as a
+question-answer pair:</p>
+<ol class="arabic simple">
+<li>How many times does the word <em>splonge</em> appear in the document? Zero.</li>
+<li>How many paragraphs does the document consist of? Two.</li>
+<li>How many fonts does the document use? Five.</li>
+</ol>
+<p>The question is usually represented only by its integer id (such as <cite>1</cite>, <cite>2</cite> and <cite>3</cite> here),
+so that the
+representation of this document becomes a series of pairs like <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0.0),</span> <span class="pre">(2,</span> <span class="pre">2.0),</span> <span class="pre">(3,</span> <span class="pre">5.0)</span></code>.</p>
+<p>If we know all the questions in advance, we may leave them implicit
+and simply write <code class="docutils literal notranslate"><span class="pre">(0.0,</span> <span class="pre">2.0,</span> <span class="pre">5.0)</span></code>.</p>
+<p>This sequence of answers can be thought of as a <strong>vector</strong> (in this case a 3-dimensional dense vector).
+For practical purposes, only questions to which the answer is (or
+can be converted to) a <em>single floating point number</em> are allowed in Gensim.</p>
+<p class="last">The questions are the same for each document, so that looking at two
+vectors (representing two documents), we will hopefully be able to make
+conclusions such as “The numbers in these two vectors are very similar, and
+therefore the original documents must be similar, too”. Of course, whether
+such conclusions correspond to reality depends on how well we picked our questions.</p>
+</dd>
+<dt id="term-gensim-sparse-vector-bag-of-words-vector">Gensim sparse vector, Bag-of-words vector</dt>
+<dd><p class="first">To save space, in Gensim we omit all vector elements with value 0.0. For example, instead of the
+3-dimensional dense vector <code class="docutils literal notranslate"><span class="pre">(0.0,</span> <span class="pre">2.0,</span> <span class="pre">5.0)</span></code>, we write only <code class="docutils literal notranslate"><span class="pre">[(2,</span> <span class="pre">2.0),</span> <span class="pre">(3,</span> <span class="pre">5.0)]</span></code> (note the missing <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0.0)</span></code>). Each vector element is a pair (2-tuple) of <code class="docutils literal notranslate"><span class="pre">(feature_id,</span> <span class="pre">feature_value)</span></code>. The values of all missing features in this sparse representation can be unambiguously resolved to zero, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
+<p class="last">Documents in Gensim are represented by such sparse vectors (sometimes called bag-of-words vectors).</p>
+</dd>
+<dt id="term-gensim-streamed-corpus">Gensim streamed corpus</dt>
+<dd><p class="first">Gensim does not prescribe any specific corpus format. A corpus is simply a sequence
+of sparse vector (see above).</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">[(2,</span> <span class="pre">2.0),</span> <span class="pre">(3,</span> <span class="pre">5.0)],</span> <span class="pre">[(3,</span> <span class="pre">1.0)]</span> <span class="pre">]</span></code>
+is a simple corpus of two documents = two sparse vectors: the first with two non-zero elements,
+the second with one non-zero element. This particular corpus is represented as a plain Python <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<p>However, the full power of Gensim comes from the fact that a corpus doesn’t have to be a <code class="docutils literal notranslate"><span class="pre">list</span></code>,
+or a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> array, or a <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> dataframe, or whatever. Gensim <em>accepts any object that,
+when iterated over, successively yields these sparse bag-of-word vectors</em>.</p>
+<p>This flexibility allows you to create your own corpus classes that stream the sparse vectors directly from disk, network, database, dataframes…. The models in Gensim are implemented such that they don’t require all vectors to reside in RAM at once. You can even create the sparse vectors on the fly!</p>
+<p>See our <a class="reference external" href="https://rare-technologies.com/data-streaming-in-python-generators-iterators-iterables/">tutorial on streamed data processing in Python</a>.</p>
+<p class="last">For a built-in example of an efficient corpus format streamed directly from disk, see
+the Matrix Market format in <a class="reference internal" href="corpora/mmcorpus.html#module-gensim.corpora.mmcorpus" title="gensim.corpora.mmcorpus: Corpus in Matrix Market format"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mmcorpus</span></code></a>. For a minimal blueprint example on
+how to create your own streamed corpora, check out the <a class="reference external" href="https://github.com/RaRe-Technologies/gensim/blob/develop/gensim/corpora/csvcorpus.py">source code of CSV corpus</a>.</p>
+</dd>
+<dt id="term-model-transformation">Model, Transformation</dt>
+<dd><p class="first">Gensim uses <strong>model</strong> to refer to the code and associated data (model parameters)
+required to transform one document representation to another.</p>
+<p>In Gensim, documents are represented as vectors (see above) so a model can be thought of as a transformation
+from one vector space to another. The parameters of this transformation are learned from the training corpus.</p>
+<p>Trained models (the data parameters) can be persisted to disk and later loaded back, either to continue
+training on new training documents or to transform new documents.</p>
+<p class="last">Gensim implements multiple models, such as <a class="reference internal" href="models/word2vec.html#gensim.models.word2vec.Word2Vec" title="gensim.models.word2vec.Word2Vec"><code class="xref py py-class docutils literal notranslate"><span class="pre">Word2Vec</span></code></a>,
+<a class="reference internal" href="models/lsimodel.html#gensim.models.lsimodel.LsiModel" title="gensim.models.lsimodel.LsiModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LsiModel</span></code></a>, <a class="reference internal" href="models/ldamodel.html#gensim.models.ldamodel.LdaModel" title="gensim.models.ldamodel.LdaModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LdaModel</span></code></a>,
+<a class="reference internal" href="models/fasttext.html#gensim.models.fasttext.FastText" title="gensim.models.fasttext.FastText"><code class="xref py py-class docutils literal notranslate"><span class="pre">FastText</span></code></a> etc. See the <a class="reference internal" href="apiref.html"><span class="doc">API reference</span></a> for a full list.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For some examples on how all this works out in code, go to <a class="reference internal" href="tutorial.html"><span class="doc">Tutorials</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div id="footer">
+<div id="footerwrapper">
+<div id="footerleft">
+<img src="_static/images/logo-gensim.png" class="smallerlogo" alt="smaller gensim logo" />
+ <a href="index.html"><img src="_static/images/gensim-footer.png" alt="gensim footer image" title="Gensim home" /></a>
+<div class="copyright">
+&copy; Copyright 2009-now, <a href="/cdn-cgi/l/email-protection#364457525f5b44535e4344535d7645534c58575b18554c" style="color:white"> Radim Řehůřek</a>
+<br />
+Last updated on Sep 20, 2018.
+</div>
+</div>
+<div id="footermiddleright">
+<div id="footermiddle">
+<ul class="navigation">
+<li><a href="index.html">
+Home
+</a></li>
+<li>|</li>
+<li><a href="tutorial.html">
+Tutorials
+</a></li>
+<li>|</li>
+<li><a href="install.html">
+Install
+</a></li>
+<li>|</li>
+<li><a href="support.html">
+Support
+</a></li>
+<li>|</li>
+<li><a href="apiref.html">
+API
+</a></li>
+<li>|</li>
+<li><a href="about.html">
+About
+</a></li>
+</ul>
+<div class="tweetodsazeni">
+<div class="tweet">
+<a href="https://twitter.com/gensim_py" target="_blank" style="color: white">Tweet @Gensim_py</a>
+</div>
+</div>
+</div>
+<div id="footerright">
+<div class="footernadpis">
+Support:
+</div>
+<div class="googlegroupsodsazeni">
+<a href="https://groups.google.com/group/gensim" class="googlegroups">
+Stay informed via gensim mailing list:
+</a>
+<form action="https://groups.google.com/group/gensim/boxsubscribe">
+<input type="text" name="email" placeholder="your@email.com" size="28" />
+<input type="submit" name="sub" value="Subscribe" />
+</form>
+</div>
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style" addthis:title="#gensim" addthis:description="Efficient Topic Modelling in Python" style="margin:20px 0 0 0">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+      (function() {
+      var at = document.createElement('script'); at.type = 'text/javascript'; at.async = true;
+      at.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 's7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d738b9b1d31ccbd';
+      var sat = document.getElementsByTagName('script')[0]; sat.parentNode.insertBefore(at, sat);
+      })();
+    </script>
+</body>
+</html>
