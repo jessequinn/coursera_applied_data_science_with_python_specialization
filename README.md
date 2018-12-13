@@ -1,22 +1,4 @@
-# Machine Learning Specialization
-## by Carlos Guestrin and Emily Fox
+# Applied Data Science With Python Specialization
 
-This Specialization from leading researchers at the University of Washington introduces you to the exciting, high-demand field of Machine Learning. Through a series of practical case studies, you will gain applied experience in major areas of Machine Learning including Prediction, Classification, Clustering, and Information Retrieval. You will learn to analyze large and complex datasets, create systems that adapt and improve over time, and build intelligent applications that can make predictions from data.
 
-Specialization consists of four courses:
-
-COURSE
-1
-Machine Learning Foundations: A Case Study Approach
-
-COURSE
-2
-Machine Learning: Regression
-
-COURSE
-3
-Machine Learning: Classification
-
-COURSE
-4
-Machine Learning: Clustering & Retrieval
+The 5 courses in this University of Michigan specialization introduce learners to data science through the python programming language. This skills-based specialization is intended for learners who have a basic python or programming background, and want to apply statistical, machine learning, information visualization, text analysis, and social network analysis techniques through popular python toolkits such as pandas, matplotlib, scikit-learn, nltk, and networkx to gain insight into their data. Introduction to Data Science in Python (course 1), Applied Plotting, Charting & Data Representation in Python (course 2), and Applied Machine Learning in Python (course 3) should be taken in order and prior to any other course in the specialization. After completing those, courses 4 and 5 can be taken in any order. All 5 are required to earn a certificate.
